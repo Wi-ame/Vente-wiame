@@ -1,0 +1,18 @@
+﻿@model vente_en_ligne.Models.Proprietaire
+
+<link href="~/css/deleteproprio.css" rel="stylesheet" />
+<main>
+    <div class="blur"></div>
+    <div class="container">
+
+        <form asp-action="DeleteConfirmed" method="post">
+            <img src="~/img/effacer.png" class="photo" />
+            <br>
+            <label for="INterID">CIN/Passeport:</label>
+            <input class="datos" type="text" asp-for="INterID">
+            <br>
+            <br>
+            <input class="boton reset" type="submit" value="Delete">
+        </form>
+    </div>
+</main>

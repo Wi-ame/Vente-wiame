@@ -1,0 +1,188 @@
+﻿@keyframes move {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.1;
+        transform: scale(0.1);
+        left: -100%;
+    }
+
+
+    40% {
+        opacity: 0.4;
+        transform: scale(2);
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 0;
+        margin: 40px auto;
+    }
+}
+
+@keyframes entrar {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0;
+        right: -80%;
+    }
+
+    100% {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Font Awesome 5 Free";
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #001f3f;
+    background-image: url("http://cdn.paper4pc.com/images/black-and-white-rain-glass-wet-surface-textures-water-drops-backgrounds-wallpaper-1.jpg");
+
+}
+
+.container {
+    margin-top:150px;
+    width: 50%;
+    min-width: 320px;
+    max-width: 1700px;
+    background-color: #001f3f;
+    overflow: auto;
+    border: 5px solid #E31B15;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 15px 15px 40px black;
+    animation: fadein ease 6000ms;
+    animation: move ease 1200ms;
+    position: relative;
+    border-radius: 5px;
+}
+
+.form-header {
+    width: 90%;
+    margin: 20px auto;
+    height: 50px;
+    background-color: lightgray;
+    line-height: 50px;
+    box-shadow: 0 0 50px black;
+    border-radius: 10px;
+}
+
+input {
+    border-radius: 2px;
+    animation: entrar 1100ms ease;
+    position: relative;
+}
+
+.datos {
+    width: 80%;
+    height: 40px;
+    padding: 20px;
+    border: none;
+    background-color: lightblue;
+    color: #E31B15;
+    margin: 20px 0;
+    text-align: center;
+}
+
+    .datos:hover {
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+        box-shadow: 5px 5px 10px black;
+        transition: box-shadow 500ms ease;
+    }
+
+    .datos:focus {
+        border-bottom: 3px solid #eee;
+        width: 80%;
+        height: 45px;
+        box-shadow: 10px 10px 30px black;
+        outline: none;
+        transition: all 500ms ease;
+    }
+.photo{
+    width:50px;
+    height:50px;
+}
+
+.radio {
+    width: 20px;
+    height: 20px;
+    margin: 20px 0 40px 0;
+}
+
+
+
+.boton {
+    width: 100px;
+    height: 40px;
+    background-color: #E31B15;
+    border: 3px solid black;
+}
+
+.submit:hover {
+    cursor: pointer;
+    box-shadow: 8px 5px 10px black;
+    transition: all 500ms ease;
+    background-color: hsla(140, 60%, 45%, 1);
+    font-weight: bolder;
+    color: white;
+}
+
+.reset:hover {
+    cursor: pointer;
+    box-shadow: 8px 5px 10px black;
+    transition: all 500ms ease;
+    background-color: orange;
+    font-weight: bold;
+    color: white;
+}
+
+footer {
+    background-color: #444;
+    padding: 8px;
+    overflow: auto;
+}
+
+    footer a {
+        text-decoration: none;
+        color: white;
+    }
+
+.madeby {
+    background-color: #111;
+    color: white;
+    width: 120px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0;
+    float: left;
+}
+
+.footer-text {
+    color: white;
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    height: 100vh;
+}

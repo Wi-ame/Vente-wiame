@@ -1,0 +1,63 @@
+﻿<link rel="stylesheet" href="/css/stylePr.css" />
+<script src="~/js/createproduct.js"></script>
+<form>
+    <div class="corps-formulaire">
+        <div class="gauche">
+            <div class="groupe">
+                <label>Product's Barcode</label>
+                <input type="text" name="Name" autocomplete="off" />
+                <i class="fas fa-code fa-lg me-2" style="color: red;"></i>
+            </div>
+            <div class="groupe">
+                <label>Product's Name</label>
+                <input type="text" name="Name" autocomplete="off" />
+                <i class="fas fa-shopping-bag fa-lg me-2" style="color: red;"></i>
+            </div>
+            <div class="groupe">
+                <label>Give the price</label>
+                <input type="text" name="Prix" autocomplete="off" />
+                <i class="fas fa-dollar-sign fa-lg me-2" style="color: red;"></i>
+            </div>
+
+            <div class="groupe">
+                <label>The date of launch</label>
+                <input type="text" name="DATE_DEPOT" autocomplete="off" />
+                <i class="fas fa-calendar-alt fa-lg me-2" style="color: red;"></i>
+            </div>
+
+            <div class="groupe">
+                <label>The quantity offered</label>
+                <input type="text" name="Stock" autocomplete="off" />
+                <i class="fas fa-cubes fa-lg me-2" style="color: red;"></i>
+            </div>
+
+        </div>
+
+        <div class="droite">
+            <div class="groupe">
+                <label><i class="fas fa-info-circle" style="color:red;"></i>Add some Details</label>
+                <textarea class="details-input" rows="4"></textarea>
+            </div>
+            <div class="groupe">
+                <label>Select Category</label>
+                <select name="category" class="custom-select">
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                </select>
+
+            </div>
+            <div class="groupe">
+                <label for="imageFile">Choose your image:</label>
+                <span class="choose-button" onclick="chooseFile()" style="color:red; margin-left:20px">Choose File</span>
+                <input type="file" name="imageFile" id="imageFile" accept=".jpg, .jpeg, .png" style="display: none;"
+                       onchange="handleImageSelect(this)" />
+                <img id="imagePreview" class="image-preview" src="#" alt="Image Preview" style="display: none;" />
+            </div>
+        </div>
+    </div>
+
+    <div class="pied-formulaire" align="center" style="margin-top: 20px;">
+        <button style="background-color: red; color: white;">Add the Product</button>
+    </div>
+</form>

@@ -1,0 +1,63 @@
+﻿<link href="~/css/styleauthadmin.css" rel="stylesheet" />
+<script src="~/js/adminauth.js"></script>
+@{
+    Layout = null;
+}
+<div class="container">
+    <div class="forms-container">
+        <div class="signin-signup">
+            <form action="#" class="sign-in-form">
+                <h2 class="title">Administrator Sign In</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" />
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" />
+                </div>
+                <input type="submit" value="Login" class="btn solid" />
+            </form>
+
+            <!-------- Left Side Of Sign Up Page ---------->
+            <form action="#" class="sign-up-form">
+                <h2 class="title">Sign Up</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" />
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="Email" />
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" />
+                </div>
+                <input type="submit" class="btn" value="Sign up" />
+            </form>
+        </div>
+    </div>
+
+    <!---------- Left Side Of Sign In Page --------->
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+            </div>
+            <img src="/img/administrateur.png" class="image" alt="2nd Pic" />
+        </div>
+        <div class="panel right-panel">
+            <div class="content">
+                <h3>One of us ?</h3>
+                <p>
+                    Click the Sign In to see the effect
+                </p>
+                <button class="btn transparent" id="sign-in-btn">
+                    Sign in
+                </button>
+            </div>
+            <img src="/img/administrateur.png" class="image" alt="1 Pic" />
+        </div>
+
+    </div>
+</div>

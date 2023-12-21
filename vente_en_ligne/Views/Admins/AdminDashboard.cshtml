@@ -1,0 +1,154 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/css/bootstrap.minP.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/css/styleP.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar">
+                <img src="~/img/e-commerce.png" class="image" />
+                <div class="navbar-nav w-100">
+                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-history me-2"></i>Users History</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-users me-2"></i>
+                            Owners
+                        </a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="#" class="dropdown-item" onclick="loadContent('CreateProp')"> <i class="fas fa-plus red-icon"></i><span class="icon-text">Add Owner </span></a>
+                            <a href="#" class="dropdown-item" onclick="loadContent('DeleteProprio')">  <i class="fas fa-trash red-icon"></i><span class="icon-text">Remove Owner </span></a>
+                            <a href="#" class="dropdown-item" onclick="loadContent('ModifyProprio')">  <i class="fas fa-pencil-alt red-icon"></i> <span class="icon-text">Modify Owner </span></a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-shopping-bag me-2"></i>Products</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="#" class="dropdown-item" onclick="loadContentProduct('CreateProduct')"> <i class="fas fa-plus red-icon"></i><span class="icon-text"> Add Product</span></a>
+                            <a href="#" class="dropdown-item" onclick="loadContentProduct('RemoveProduct')"> <i class="fas fa-trash red-icon"></i><span class="icon-text"> Remove Product </span></a>
+                            <a href="#" class="dropdown-item" onclick="loadContentProduct('ModifyProduct')"> <i class="fas fa-pencil-alt red-icon"></i> <span class="icon-text">Modify Product </span></a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-shapes me-22"></i>Categories</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="#" class="dropdown-item" onclick="loadContentCat('CreateCat')"><i class="fas fa-plus red-icon"></i><span class="icon-text"> Add Category</span></a>
+                            <a href="#" class="dropdown-item" onclick="loadContentCat('RemoveCat')"> <i class="fas fa-trash red-icon"></i> <span class="icon-text">Remove Category </span></a>
+                        </div>
+                        <a href="widget.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Statistics</a>
+                        <a href="form.html" class="nav-item nav-link"><i class="fa fa-exclamation-triangle me-2"></i>Problems</a>
+                        <a href="table.html" class="nav-item nav-link"><i class="fa fa-list me-2"></i>Dark list</a>
+                        <a href="chart.html" class="nav-item nav-link"><i class="fa fa-heart me-2"></i>Favorites</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand  navbar-dark sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="/img/administrateur.png" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">Admin</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="@Url.Action("Index", "Home")" class="dropdown-item">Log Out</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Widgets End -->
+            <div id="main-content">
+                <!-- Le contenu des vues partielles sera chargé ici -->
+            </div>
+
+        </div>
+
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <!-- Ajoutez cette balise script à la fin de votre page HTML, juste avant la balise </body> -->
+    </div>
+
+    <!-- JavaScript Libraries -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/chart/chart.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/waypoints/waypoints.min.js"></script>
+    <script src="/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Sélectionnez tous les éléments de la navbar avec la classe nav-link
+            var navItems = $('.navbar-nav .nav-link');
+
+            // Ajoutez un gestionnaire d'événements à chaque élément
+            navItems.click(function () {
+                // Supprimez la classe 'active' de tous les éléments
+                navItems.removeClass('active');
+
+                // Ajoutez la classe 'active' à l'élément cliqué
+                $(this).addClass('active');
+            });
+        });
+    </script>
+
+
+    <!-- Template Javascript -->
+    <script src="/js/mainP.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+﻿@model vente_en_ligne.Models.Proprietaire
+<link href="~/css/styleprioprioauth.css" rel="stylesheet" />
+<script src="~/js/adminauth.js"></script>
+@{
+    Layout = null;
+}
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation.unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
+<div class="container">
+    <div class="forms-container">
+        <div class="signin-signup">
+            <form asp-action="Create" method="post" class="sign-in-form">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <h2 class="title">User Sign up </h2>
+                <div class="aligne">
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <div class="field-container">
+                            <input type="text" asp-for="INterID" placeholder="CIN OR NumPasseport" />
+                            <span asp-validation-for="INterID" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <div class="field-container">
+                            <input type="text" asp-for="Tele" placeholder="Phone" />
+                            <span asp-validation-for="Tele" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="aligne">
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <div class="field-container">
+                            <input type="text" asp-for="Prenom" placeholder="Firstname" />
+                            <span asp-validation-for="Prenom" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <div class="field-container">
+                            <input type="text" asp-for="Nom" placeholder="LastName" />
+                            <span asp-validation-for="Nom" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="aligne">
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <div class="field-container">
+                            <input type="text" asp-for="Email" placeholder="Email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <div class="field-container">
+                            <input type="password" asp-for="password" placeholder="Password" />
+                            <span asp-validation-for="password" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <p style="color: red;">If you are not a company, please enter "Individual" in the Company Name field.</p>
+                <div class="aligne">
+
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <div class="field-container">
+
+                            <input type="text" asp-for="NomEntreprise" placeholder="CompanyName" />
+                            <span asp-validation-for="NomEntreprise" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <div class="field-container">
+                            <input type="text" asp-for="AdresseEntreprise" placeholder="CompanyAddress" />
+                            <span asp-validation-for="AdresseEntreprise" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="submit" value="Create" class="btn solid" />
+            </form>
+        </div>
+    </div>
+
+    <!---------- Left Side Of Sign In Page --------->
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+                <h3>Back to Authentication :</h3>
+                <p>
+                    Click the Login to go back to the Login page.
+                </p>
+                <a href="@Url.Action("Index", "Proprietaires")" class="btn transparent" style="font-size: 20px; padding: 10px;">
+                    Login
+                </a>
+            </div>
+            <img src="/img/profil.png" class="image" alt="2nd Pic" />
+        </div>
+        <div class="panel right-panel">
+            <div class="content">
+                <h3>One of us ?</h3>
+                <p>
+                    Click the Sign In to see the effect
+                </p>
+                <button class="btn transparent" id="sign-in-btn">
+                    LOGIN
+                </button>
+            </div>
+            <img src="/img/profil.png" class="image" alt="1 Pic" />
+        </div>
+    </div>
+</div>

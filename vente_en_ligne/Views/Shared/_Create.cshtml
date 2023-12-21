@@ -1,0 +1,90 @@
+﻿@model vente_en_ligne.Models.Proprietaire
+
+<script src="~/js/createprop.js"></script>
+<link href="~/css/createprop.css" rel="stylesheet" />
+
+
+<div class='box'>
+    <div class='box-form'>
+        <div class='box-login-tab'></div>
+        <div class='box-login'>
+            <form asp-action="CreateProp" method="post" class="sign-in-form">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class='fieldset-body' id='login_form'>
+                    <p class='field'>
+                        <label for='pass'>CIN/Passeport</label>
+                        <input type='text' asp-for="INterID" />
+                        <span asp-validation-for="INterID" class="text-danger"></span>
+                    </p>
+                    <p class='field'>
+                        <label for='user'>E-mail</label>
+                        <input type='text' asp-for="Email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </p>
+                    <p class='field'>
+                        <label for='pass'>Password</label>
+                        <input type='password' asp-for="password" />
+                        <span asp-validation-for="password" class="text-danger"></span>
+                    </p>
+                    <p class='field'>
+                        <label for='pass'>Last Name</label>
+                        <input type='text' asp-for="Nom" />
+                        <span asp-validation-for="Nom" class="text-danger"></span>
+                    </p>
+                    <p class='field'>
+                        <label for='pass'>First Name</label>
+                        <input type='text' asp-for="Prenom" />
+                        <span asp-validation-for="Prenom" class="text-danger"></span>
+                    </p>
+                    <p class='field'>
+                        <label for='pass'>Phone</label>
+                        <input type='text' asp-for="Tele" />
+                        <span asp-validation-for="Tele" class="text-danger"></span>
+                    </p>
+                    <p class='field'>
+                        <label for='pass'>Company name</label>
+                        <input type='text' asp-for="NomEntreprise" />
+                        <span asp-validation-for="NomEntreprise" class="text-danger"></span>
+                    </p>
+                    <p class='field'>
+                        <label for='pass'>Adress</label>
+                        <input type='text' asp-for="AdresseEntreprise" />
+                        <span asp-validation-for="AdresseEntreprise" class="text-danger"></span>
+                    </p>
+                    <input type='submit' id='do_login' value='Create' title='Get Started' />
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+
+<div class='icon-credits'>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a>, <a href="http://www.flaticon.com/authors/budi-tanrim" title="Budi Tanrim">Budi Tanrim</a> & <a href="http://www.flaticon.com/authors/nice-and-serious" title="Nice and Serious">Nice and Serious</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<script>
+    // Capture de la soumission du formulaire
+    $('form').submit(function (e) {
+        e.preventDefault(); // Empêche l'envoi du formulaire par défaut
+
+        var form = this;
+        var formData = $(form).serialize(); // Récupère les données du formulaire
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("CreateProp")', // Votre URL d'action du contrôleur
+            data: formData,
+            success: function () {
+                // Effacer les champs du formulaire après la soumission réussie
+                form.reset();
+                // Effacer le message de succès après quelques secondes
+                setTimeout(function () {
+                    $('.alert-success').fadeOut();
+                }, 3000); // Disparition du message de succès après 3 secondes
+            },
+            error: function () {
+                // Gestion des erreurs
+            }
+        });
+    });
+</script>
